@@ -36,12 +36,7 @@ public class FileUsersServiceImpl implements FileUsersService {
 			return false;
 		} else {
 			try {
-				try {
-					fileUjian = fileUjianService.findBySoalHeader(user, soalHeader);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-
+				fileUjian = fileUjianService.findBySoalHeader(user, soalHeader);
 				if (fileUjian != null) {
 					fileUjian.setFile(file.getBytes());
 					fileUjian.setFileType(file.getContentType());

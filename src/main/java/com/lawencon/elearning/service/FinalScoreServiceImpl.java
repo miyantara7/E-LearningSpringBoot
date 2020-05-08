@@ -41,11 +41,7 @@ public class FinalScoreServiceImpl implements FinalScoreService {
 			totalNilai = Double.valueOf(100);
 		}
 		try {
-			try {
-				nilaiAkhir = nilaiTotalDao.checkNilai(idUser, mpId);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
+			nilaiAkhir = nilaiTotalDao.checkNilai(idUser, mpId);
 			if (nilaiAkhir != null) {
 				nilaiAkhir.setFinalScore(totalNilai);
 				nilaiTotalDao.update(nilaiAkhir);

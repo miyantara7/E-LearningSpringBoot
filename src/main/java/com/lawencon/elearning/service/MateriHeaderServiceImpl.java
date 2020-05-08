@@ -35,18 +35,21 @@ public class MateriHeaderServiceImpl implements MateriHeaderService {
 		MateriHeader header = null;
 		try {
 			header = materiHeaderDao.findById(id);
+			if (header != null) {
+				String[] format = new String[] { "yyyy-MM-dd" };
+				Date date = DateUtils.parseDate(tanggal, format);
+				header.setDate(date);
+				header.setTime(waktu);
+				DayOfWeek day = LocalDate.parse(tanggal).getDayOfWeek();
+				header.setDay(day.toString().toUpperCase());
+				return materiHeaderDao.updateHeader(header);
+			}else {
+				throw new Exception();
+			}
 		} catch (Exception e) {
+			throw new Exception();
 		}
-		if (header != null) {
-			String[] format = new String[] { "yyyy-MM-dd" };
-			Date date = DateUtils.parseDate(tanggal, format);
-			header.setDate(date);
-			header.setTime(waktu);
-			DayOfWeek day = LocalDate.parse(tanggal).getDayOfWeek();
-			header.setDay(day.toString().toUpperCase());
-			return materiHeaderDao.updateHeader(header);
-		}
-		return null;
+
 	}
 
 	@Override

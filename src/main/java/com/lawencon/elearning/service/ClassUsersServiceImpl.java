@@ -42,16 +42,18 @@ public class ClassUsersServiceImpl implements ClassUsersService {
 		Users user = new Users();
 		try {
 			id = kelasService.findClass(uId, idMateriPengajar);
+			if (id == null) {
+				mp.setId(idMateriPengajar);
+				user.setId(uId);
+				kelas.setUsers(user);
+				kelas.setMateriPengajar(mp);
+				return kelasService.insertKelas(kelas);
+			}
+			return null;
 		} catch (Exception e) {
+			throw new Exception();
 		}
-		if (id == null) {
-			mp.setId(idMateriPengajar);
-			user.setId(uId);
-			kelas.setUsers(user);
-			kelas.setMateriPengajar(mp);
-			return kelasService.insertKelas(kelas);
-		}
-		return null;
+
 	}
 
 	@Override
@@ -64,13 +66,15 @@ public class ClassUsersServiceImpl implements ClassUsersService {
 		String jams = null;
 		try {
 			jams = kelasService.cekClass(uId, jam);
+			if (jams == null) {
+				return true;
+			} else {
+				return false;
+			}
 		} catch (Exception e) {
+			throw new Exception();
 		}
-		if (jams == null) {
-			return true;
-		} else {
-			return false;
-		}
+
 
 	}
 

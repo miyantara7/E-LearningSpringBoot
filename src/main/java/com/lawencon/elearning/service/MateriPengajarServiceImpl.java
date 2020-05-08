@@ -32,17 +32,8 @@ public class MateriPengajarServiceImpl implements MateriPengajarService {
 		Materi materi = null;
 		Class kelas = null;
 		try {
-			try {
-				materi = materiService.findById(materiPengajar.getMateri().getId());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			try {
-				kelas = kelasService.findById(materiPengajar.getClasses().getId());
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
+			materi = materiService.findById(materiPengajar.getMateri().getId());
+			kelas = kelasService.findById(materiPengajar.getClasses().getId());
 			if (materi != null && kelas != null) {
 				materiPengajar.setTrainer(materiPengajar.getTrainer());
 				return materiPengajarService.insert(materiPengajar);

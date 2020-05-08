@@ -51,14 +51,15 @@ public class AttendanceServiceImpl implements AttendanceService {
 		System.out.println(hari);
 		try {
 			absen = absenService.findByUserMateriPengajar(user, mpId, date);
+			if (absen != null || days.equals("SATURDAY") || days.equals("SUNDAY")) {
+				return true;
+			} else {
+				return false;
+			}
 		} catch (Exception e) {
+			throw new Exception();
+		}
 
-		}
-		if (absen != null || days.equals("SATURDAY") || days.equals("SUNDAY")) {
-			return true;
-		} else {
-			return false;
-		}
 	}
 
 }
