@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Header" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3053b2e3-072c-4875-97e1-6e5db110dac6">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="10" y="10" width="50" height="50" uuid="4f569756-6954-457f-8309-38f589d0fa8a"/>
+				<imageExpression><![CDATA["lawencon.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="80" y="0" width="470" height="30" uuid="b0a6ec84-39a5-42b0-beda-8948707e0db8"/>
+				<textElement textAlignment="Center">
+					<font size="19"/>
+				</textElement>
+				<text><![CDATA[PT. Lawencon International]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="33" width="470" height="17" uuid="7672de5e-593f-4efd-9759-4cd711ff6175"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Wisma Staco, 5th Floor, Casablanca Street, Kav 18, 12870, Jakarta Selatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="50" width="470" height="17" uuid="66002fe1-3dab-4005-a88e-242678fe63e7"/>
+				<textElement textAlignment="Center">
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[Telp : (021) 837 02192]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="73" width="555" height="1" uuid="ee387f70-8475-4e94-bd04-0c54890fd743"/>
+			</line>
+			<line>
+				<reportElement x="0" y="75" width="555" height="1" uuid="dbdcb481-6a96-4902-b799-75d5508aeff2"/>
+			</line>
+		</band>
+	</title>
+</jasperReport>

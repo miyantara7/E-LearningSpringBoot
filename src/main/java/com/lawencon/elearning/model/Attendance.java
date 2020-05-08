@@ -1,0 +1,62 @@
+package com.lawencon.elearning.model;
+
+import java.time.LocalDate;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import org.hibernate.annotations.GenericGenerator;
+
+@Entity
+@Table(name = "tb_attendances")
+public class Attendance {
+
+	@Id
+	@GeneratedValue(generator = "UUID")
+	@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+	@Column(updatable = false, nullable = false)
+	private String id;
+	@ManyToOne
+	@JoinColumn(name = "user_id")
+	private Users user;
+	private LocalDate date;
+	@ManyToOne
+	@JoinColumn(name = "materipengajar_id")
+	private MateriPengajar materiPengajar;
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Users getUser() {
+		return user;
+	}
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
+	}
+
+	public MateriPengajar getMateriPengajar() {
+		return materiPengajar;
+	}
+
+	public void setMateriPengajar(MateriPengajar materiPengajar) {
+		this.materiPengajar = materiPengajar;
+	}
+
+}
